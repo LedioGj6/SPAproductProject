@@ -9,19 +9,19 @@ import { ProductsService } from '../services/products.service';
   templateUrl: './men-clothing.component.html',
   styleUrls: ['./men-clothing.component.scss']
 })
-export class MenClothingComponent  implements OnInit{
-  mensClothingList:Product[] = []
+export class MenClothingComponent implements OnInit {
+  mensClothingList: Product[] = []
   constructor(
-    private productsService:ProductsService, 
-    private router:Router,
-    private spinner:NgxSpinnerService
-    ){
+    private productsService: ProductsService,
+    private router: Router,
+    private spinner: NgxSpinnerService
+  ) {
   }
 
   ngOnInit(): void {
     this.spinner.show();
     this.productsService.getProducts('men\'s clothing').subscribe({
-      next:(res)=>{
+      next: (res) => {
         console.log(res);
         console.log(JSON.stringify(res))
         this.mensClothingList = res
@@ -30,8 +30,31 @@ export class MenClothingComponent  implements OnInit{
       }
     })
   }
-  goToProductDetails(id:number){
+
+  sort(event: any) {
+    switch (event) {
+      case "Low":
+        {
+          this.mensClothingList = this.mensClothingList.sort((low, high) => low.price - high.price);
+          break;
+        }
+
+      case "High":
+        {
+          this.mensClothingList = this.mensClothingList.sort((low, high) => high.price - low.price);
+          break;
+        }
+      default: {
+        this.mensClothingList = this.mensClothingList.sort((low, high) => low.price - high.price);
+        break;
+      }
+
+    }
+    return this.mensClothingList;
+
+  }
+  goToProductDetails(id: number) {
     this.spinner.show()
-    this.router.navigate(['/product-details/',id])
+    this.router.navigate(['/product-details/', id])
   }
 }

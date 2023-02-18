@@ -17,7 +17,10 @@ import { WomenClothingComponent } from './women-clothing/women-clothing.componen
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { ElectronicsComponent } from './electronics/electronics.component';
 import { JeweleryComponent } from './jewelery/jewelery.component';
-
+import { MatSelectModule } 
+    from '@angular/material/select'; 
+    import { MatFormFieldModule } 
+    from '@angular/material/form-field'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +40,8 @@ import { JeweleryComponent } from './jewelery/jewelery.component';
     MatToolbarModule,
     HttpClientModule,
     FlexLayoutModule,
+    MatSelectModule,
+    MatFormFieldModule,
     NgxSpinnerModule.forRoot({ type: 'ball-spin-clockwise' })
   ],
   providers: [ProductsService,NgxSpinnerService],

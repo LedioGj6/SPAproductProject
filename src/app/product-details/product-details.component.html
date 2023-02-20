@@ -1,6 +1,18 @@
-<p>{{productDetails.title}}</p>
-<p>{{productDetails.description}}</p>
-<p>{{productDetails.price}}</p>
-<img style="height:100px; width: 100px;" src="{{ productDetails.image }}" />
-<ngx-spinner type="ball-spin-clockwise"></ngx-spinner>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 photo-position">
+            <img class="photo-details" src="{{ productDetails.image }}" />
+        </div>
+        <div class="col-md-8 text-position">
+            <h2>{{productDetails.title}}</h2>
+            <p class="price">${{productDetails.price}}</p>
+            <p class="description"><i>{{productDetails.description}}</i> </p>
+            <p> <b>Rating: </b>{{productDetails.rating?.rate}}<mat-icon class="rating-icon">star</mat-icon></p>
+            <p> <b>Vote Count:</b> {{productDetails.rating?.count}}</p>
+        </div>
+    </div>
+</div>
 
+
+<ngx-spinner type="ball-spin-clockwise"></ngx-spinner>

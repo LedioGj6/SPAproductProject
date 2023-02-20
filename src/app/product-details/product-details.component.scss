@@ -1,0 +1,25 @@
+.photo-position {
+    display: flex;
+    justify-content: end;
+}
+
+.rating-icon {
+    font-size: 19px;
+    height: 16px;
+}
+.price{
+    font-weight: 400;
+    color: green;
+}
+.text-position{
+    position: relative;
+    top: 100px;
+}
+.description{
+    width: 70%;
+}
+.photo-details{
+    height:400px; 
+    width: 400px;
+    margin-right: 20px;
+}

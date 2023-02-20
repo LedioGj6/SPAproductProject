@@ -8,8 +8,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { WomenClothingComponent } from './women-clothing/women-clothing.component';
 
 const routes: Routes =[
-  { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path: 'home', component: HomeComponent},
+  { path: '', redirectTo: 'men-clothing', pathMatch: 'full'},
+  // { path: 'home', component: HomeComponent},
   { path: 'men-clothing', component: MenClothingComponent},
   { path: 'women-clothing', component: WomenClothingComponent},
   { path: 'jewelery', component: JeweleryComponent},

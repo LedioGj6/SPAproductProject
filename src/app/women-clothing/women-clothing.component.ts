@@ -26,6 +26,28 @@ export class WomenClothingComponent {
       }
     })
   }
+  sort(event: any) {
+    switch (event) {
+      case "Low":
+        {
+          this.womensClothingList = this.womensClothingList.sort((low, high) => low.price - high.price);
+          break;
+        }
+
+      case "High":
+        {
+          this.womensClothingList = this.womensClothingList.sort((low, high) => high.price - low.price);
+          break;
+        }
+      default: {
+        this.womensClothingList = this.womensClothingList.sort((low, high) => low.price - high.price);
+        break;
+      }
+
+    }
+    return this.womensClothingList;
+
+  }
   goToProductDetails(id:number){
     this.router.navigate(['/product-details/',id])
   }

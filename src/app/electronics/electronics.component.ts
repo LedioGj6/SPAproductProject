@@ -31,7 +31,28 @@ export class ElectronicsComponent implements OnInit{
 
     })
   }
+  sort(event: any) {
+    switch (event) {
+      case "Low":
+        {
+          this.electronicList = this.electronicList.sort((low, high) => low.price - high.price);
+          break;
+        }
 
+      case "High":
+        {
+          this.electronicList = this.electronicList.sort((low, high) => high.price - low.price);
+          break;
+        }
+      default: {
+        this.electronicList = this.electronicList.sort((low, high) => low.price - high.price);
+        break;
+      }
+
+    }
+    return this.electronicList;
+
+  }
 
   goToProductDetails(id:number){
     this.spinner.show();

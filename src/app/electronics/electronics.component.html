@@ -1,4 +1,15 @@
 <div class="content">
+    <mat-form-field appearance="fill">
+        <mat-label>Sort by price</mat-label>
+        <mat-select (valueChange)="sort($event)">
+            <mat-option value="Low">
+                Low
+            </mat-option>
+            <mat-option value="High">
+                High
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
     <div fxLayout="row wrap" fxLayoutAlign="space-around center"  fxLayoutGap="18px">
         <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of electronicList">
             <mat-card style="margin-top:10px;">

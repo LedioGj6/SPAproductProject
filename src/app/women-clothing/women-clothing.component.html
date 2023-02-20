@@ -1,7 +1,18 @@
 <div class="content">
-    <div fxLayout="row wrap" fxLayoutAlign="center center"  fxLayoutGap="16px">
+    <mat-form-field appearance="fill">
+        <mat-label>Sort by price</mat-label>
+        <mat-select (valueChange)="sort($event)">
+            <mat-option value="Low">
+                Low
+            </mat-option>
+            <mat-option value="High">
+                High
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="16px">
         <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let item of womensClothingList">
-            <mat-card  style="margin-top:10px;">
+            <mat-card style="margin-top:10px;">
                 <mat-card-header>
                     <mat-card-title> {{item.title}}</mat-card-title>
                     <mat-card-subtitle> ${{item.price}}

@@ -18,10 +18,7 @@ export class WomenClothingComponent {
     this.spinner.show();
     this.productsService.getProducts('women\'s clothing').subscribe({
       next:(res)=>{
-        console.log(res);
-        console.log(JSON.stringify(res))
         this.womensClothingList = res
-        console.log(this.womensClothingList)
         this.spinner.hide();
       }
     })

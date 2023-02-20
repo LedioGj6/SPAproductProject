@@ -22,10 +22,7 @@ export class MenClothingComponent implements OnInit {
     this.spinner.show();
     this.productsService.getProducts('men\'s clothing').subscribe({
       next: (res) => {
-        console.log(res);
-        console.log(JSON.stringify(res))
         this.mensClothingList = res
-        console.log(this.mensClothingList)
         this.spinner.hide();
       }
     })

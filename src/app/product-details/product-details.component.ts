@@ -31,7 +31,6 @@ export class ProductDetailsComponent implements OnInit {
     this.spinner.show();
     this.productsService.getProductDetails(this.idFromRoute).subscribe({
       next: (res) => {
-        console.log(res);
         this.productDetails = res;
         this.spinner.hide();
       },

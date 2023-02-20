@@ -22,10 +22,7 @@ export class ElectronicsComponent implements OnInit{
     this.spinner.show();
     this.productsService.getProducts('electronics').subscribe({
       next:(res)=>{
-        console.log(res);
-        console.log(JSON.stringify(res));
         this.electronicList = res;
-        console.log(this.electronicList);
         this.spinner.hide();
       }
 

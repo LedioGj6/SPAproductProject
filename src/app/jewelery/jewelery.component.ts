@@ -9,21 +9,26 @@ import { ProductsService } from '../services/products.service';
   templateUrl: './jewelery.component.html',
   styleUrls: ['./jewelery.component.scss']
 })
-export class JeweleryComponent implements OnInit  {
-  jeweleryList: Product[] = [];
-  constructor(private productsService:ProductsService,  private router: Router,
-    private spinner: NgxSpinnerService){
-
+export class JeweleryComponent implements OnInit {
+  jeweleryList:Product[]=[]
+  constructor(
+    private productsService:ProductsService,
+    private router:Router,
+    private spinner:NgxSpinnerService
+  ){
   }
-  ngOnInit(){
-    this.productsService.getProducts('jewelery').subscribe(
-      {
-        next:(res) => {
-          console.log(res);
-          this.jeweleryList = res;
-        }
+
+  ngOnInit(): void {
+    this.spinner.show();
+    this.productsService.getProducts('jewelery').subscribe({
+      next:(res)=>{
+        console.log(res);
+        console.log(JSON.stringify(res));
+        this.jeweleryList = res;
+        console.log(this.jeweleryList);
+        this.spinner.hide();
       }
-    )
+    })
   }
   sort(event: any) {
     switch (event) {
@@ -47,8 +52,9 @@ export class JeweleryComponent implements OnInit  {
     return this.jeweleryList;
 
   }
-  goToProductDetails(id: number) {
-    this.spinner.show()
-    this.router.navigate(['/product-details/', id])
+    goToProductDetails(id:number){
+      this.spinner.show();
+      this.router.navigate(['/product-details/',id]);
+    }
   }
-}
+

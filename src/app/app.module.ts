@@ -7,9 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ProductsService } from './services/products.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { MenClothingComponent } from './men-clothing/men-clothing.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ProductDetailsComponent } from './product-details/product-details.component';
@@ -42,6 +43,7 @@ import { MatSelectModule }
     FlexLayoutModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatIconModule,
     NgxSpinnerModule.forRoot({ type: 'ball-spin-clockwise' })
   ],
   providers: [ProductsService,NgxSpinnerService],
